@@ -20,7 +20,9 @@ export const getNews = async () => {
   try {
     const response = await fetch(`${BASE_URL}latest-news?apiKey=${API_KEY}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      console.log('API_KEY: ', API_KEY);
+      console.log('BASE_URL: ', BASE_URL);
+      throw new Error(`Network response was not ok ${BASE_URL} ${API_KEY}`);
     }
     const data = await response.json();
     return data;

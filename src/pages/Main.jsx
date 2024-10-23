@@ -11,7 +11,6 @@ const Main = () => {
       try {
         const response = await getNews();
         setNews(response.news);
-        console.log("response.news: ", response.news);
       } catch (error) {
         console.log("error: ", error);
       }

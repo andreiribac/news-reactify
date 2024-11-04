@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import s from "./styles.module.css";
+import s from "./styles.module.scss";
 
 const Image = ({ image }) => {
   return (

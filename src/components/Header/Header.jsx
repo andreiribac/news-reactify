@@ -1,15 +1,17 @@
 import { formatDate } from "../../helpers/formatDate";
-import s from "./styles.module.css";
+import s from './styles.module.scss'
 
 const Header = () => {
-  return (
-    <header className={s.header}>
-      <div className={s.header__wrapper}>
-        <h1 className={s.header__title}>News Reactify</h1>
-        <div className={s.header__dateBox}>{formatDate(new Date())}</div>
-      </div>
-    </header>
-  );
+	return (
+		<header className={s.header}>
+			<div className={s.header__wrapper}>
+				<h1 className={s.header__title}>News Reactify</h1>
+				<div className={s.header__dateBox}>
+					{formatDate(new Date())}
+				</div>
+			</div>
+		</header>
+	);
 };
 
 export default Header;

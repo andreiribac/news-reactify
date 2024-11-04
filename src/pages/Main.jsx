@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import s from "./styles.module.css";
-import NewsBanner from "../components/NewsBanner/NewsBanner";
+import s from "./styles.module.scss";
+import NewsBanner from '../components/NewsBanner/NewsBanner';
 import { getNews } from "../api/apiNews";
 import NewsList from "../components/NewsList/NewsList";
 
@@ -11,6 +11,7 @@ const Main = () => {
       try {
         const response = await getNews();
         setNews(response.news);
+        console.log("response.news: ", response.news);
       } catch (error) {
         console.log("error: ", error);
       }

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import Image from "../Image/Image";
-import s from "./styles.module.css";
+import s from "./styles.module.scss";
 
 const NewsBanner = ({ item }) => {
   return (

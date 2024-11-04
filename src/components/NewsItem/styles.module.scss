@@ -1,0 +1,26 @@
+.NewsItem {
+	display: flex;
+  gap: 16px;
+  &__imgBox {
+    flex-shrink: 0;
+    display: block;
+    width: 67px;
+    height: 67px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: cadetblue;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__title {
+    font-size: 16px;
+  }
+  &__published {
+    font-size: 12px;
+    color: #6c7072;
+  }
+}

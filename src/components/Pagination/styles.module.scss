@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  &__arrow,
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+    color: cadetblue;
+    background-color: white;
+    border: 1px solid cadetblue;
+    cursor: pointer;
+  }
+  &__arrow {
+    &:disabled {
+      opacity: 0.3;
+      filter: grayscale(1);
+      pointer-events: none;
+    }
+  }
+  &__item {
+    &.active {
+      pointer-events: none;
+      color: white;
+      background-color: cadetblue;
+    }
+  }
+}

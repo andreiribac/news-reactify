@@ -1,0 +1,41 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  &__wrapper {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: cadetblue white; 
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    width: auto;
+    height: 30px;
+    font-weight: 700;
+    color: cadetblue;
+    background-color: white;
+    border: 1px solid cadetblue;
+    cursor: pointer;
+  }
+  &__item {
+    &.active {
+      pointer-events: none;
+      color: white;
+      background-color: cadetblue;
+    }
+  }
+}

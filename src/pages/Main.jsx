@@ -17,8 +17,7 @@ const Main = () => {
     page_size: PAGE_SIZE,
     category: null,
     keywords: "",
-  });
-  console.log('filters: ', filters);
+  }); 
 
   const debouncedKeywords = useDebounce(filters.keywords, 1000);
 
@@ -28,7 +27,6 @@ const Main = () => {
   });
   
   const { data: dataCategories } = useFetch(getCategories);
-  console.log("filters.page_number", filters.page_number);
 
   const handleNextPage = () => {
     if (filters.page_number < TOTAL_PAGES) {

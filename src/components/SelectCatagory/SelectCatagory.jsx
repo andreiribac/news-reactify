@@ -10,6 +10,14 @@ const SelectCatagory = ({
     <div className={s.categories}>
       <div className={s.categories__wrapper}>
         <div className={s.categories__row}>
+          <button
+            onClick={() => setSelectedCategory(null)}
+            className={`${s.categories__item} ${
+              !selectedCategory && s.active
+            }`}
+          >
+            All
+          </button>
           {categories.map((catagory) => {
             return (
               <button

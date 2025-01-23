@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
-import withSkeleton from "../../helpers/hocs/withSkeleton";
 import Image from "../Image/Image";
 import s from "./styles.module.scss";
 
@@ -18,6 +17,4 @@ const NewsBanner = ({ item }) => {
   );
 };
 
-const NewsBannerWithSkeleton = withSkeleton(NewsBanner, 'banner', 1);
-
-export default NewsBannerWithSkeleton;
+export default NewsBanner;

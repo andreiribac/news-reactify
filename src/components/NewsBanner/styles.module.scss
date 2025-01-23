@@ -4,9 +4,11 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    height: 100%;
   }
   &__title {
     font-size: 16px;
+    flex-grow: 1;
   }
   &__published {
     font-size: 12px;

@@ -8,6 +8,7 @@ import { useDebounce } from "../helpers/hooks/useDebounce";
 import { PAGE_SIZE, TOTAL_PAGES } from '../constants/constants';
 import { useFetch } from "../helpers/hooks/useFetch";
 import { useFilters } from "../helpers/hooks/useFilters";
+import LatestNews from '../components/LatestNews/LatestNews';
 import s from "./styles.module.scss";
 
 
@@ -44,6 +45,8 @@ const Main = () => {
 
   return (
     <div className={s.mainPage}>
+      {/* TODO 7:34 */}
+      <LatestNews banners={data && data.news} isLoading={isLoading} />
       {dataCategories ? (
         <SelectCatagory
           categories={dataCategories.categories}
@@ -51,10 +54,6 @@ const Main = () => {
           setSelectedCategory={(category) => changeFilter("category", category)}
         />
       ) : null}
-      <NewsBanner
-        isLoading={isLoading}
-        item={data && data.news && data.news[0]}
-      />
       <Search
         keywords={filters.keywords}
         setKeywords={(keywords) => changeFilter("keywords", keywords)}

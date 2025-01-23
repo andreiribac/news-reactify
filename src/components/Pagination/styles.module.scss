@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
   }
   &__arrow,
@@ -15,11 +16,13 @@
     justify-content: center;
     align-items: center;
     width: 30px;
+    min-width: 30px;
     height: 30px;
     font-weight: 700;
     color: cadetblue;
     background-color: white;
     border: 1px solid cadetblue;
+    border-radius: 10px;
     cursor: pointer;
   }
   &__arrow {

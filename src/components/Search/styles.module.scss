@@ -6,6 +6,7 @@
     width: 100%;
     height: 30px;
     border: 1px  solid gray;
+    border-radius: 10px;
     &:focus-within {
       border-color: cadetblue;
     }
@@ -16,5 +17,6 @@
     padding: 3px 10px;
     border: none;
     outline: none;
+    border-radius: inherit;
   }
 }

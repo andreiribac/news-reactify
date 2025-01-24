@@ -1,15 +1,11 @@
-import { getCategories, getNews } from "../api/apiNews";
-import NewsBanner from "../components/NewsBanner/NewsBanner";
-import NewsList from "../components/NewsList/NewsList";
-import Pagination from "../components/Pagination/Pagination";
-import SelectCatagory from "../components/SelectCatagory/SelectCatagory";
-import Search from "../components/Search/Search";
+import { getNews } from "../api/apiNews";
 import { useDebounce } from "../helpers/hooks/useDebounce";
-import { PAGE_SIZE, TOTAL_PAGES } from '../constants/constants';
+import { PAGE_SIZE } from '../constants/constants';
 import { useFetch } from "../helpers/hooks/useFetch";
 import { useFilters } from "../helpers/hooks/useFilters";
 import LatestNews from '../components/LatestNews/LatestNews';
-import s from "./styles.module.scss";
+import NewsByFilters from '../components/NewsByFilters/NewsByFilters';
+import styles from "./styles.module.scss";
 
 
 const Main = () => {
@@ -26,52 +22,16 @@ const Main = () => {
     ...filters,
     keywords: debouncedKeywords,
   });
-  
-  const { data: dataCategories } = useFetch(getCategories);
-
-  const handleNextPage = () => {
-    if (filters.page_number < TOTAL_PAGES) {
-      changeFilter("page_number", filters.page_number + 1);
-    }
-  }
-  const handlePrevPage = () => {
-    if (filters.page_number > 1) {
-      changeFilter("page_number", filters.page_number + 1);
-    }
-  }
-  const handlePageClick = (pageNumber) => {
-    changeFilter("page_number", pageNumber);
-  };
-
+ 
+// TODO 22:11
   return (
-    <div className={s.mainPage}>
-      {/* TODO 7:34 */}
+    <div className={styles.mainPage}>
       <LatestNews banners={data && data.news} isLoading={isLoading} />
-      {dataCategories ? (
-        <SelectCatagory
-          categories={dataCategories.categories}
-          selectedCategory={filters.category}
-          setSelectedCategory={(category) => changeFilter("category", category)}
-        />
-      ) : null}
-      <Search
-        keywords={filters.keywords}
-        setKeywords={(keywords) => changeFilter("keywords", keywords)}
-      />
-      <Pagination
-        handleNextPage={handleNextPage}
-        handlePrevPage={handlePrevPage}
-        handlePageClick={handlePageClick}
-        currentPage={filters.page_number}
-        totalPages={TOTAL_PAGES}
-      />
-      <NewsList isLoading={isLoading} news={data?.news} />
-      <Pagination
-        handleNextPage={handleNextPage}
-        handlePrevPage={handlePrevPage}
-        handlePageClick={handlePageClick}
-        currentPage={filters.page_number}
-        totalPages={TOTAL_PAGES}
+      <NewsByFilters
+        filters={filters}
+        changeFilter={changeFilter}
+        isLoading={isLoading}
+        news={data?.news}
       />
     </div>
   );

@@ -13,19 +13,20 @@
     width: 100%;
     overflow-x: auto;
     scrollbar-width: thin;
-    scrollbar-color: cadetblue white; 
+    scrollbar-color: cadetblue white;
   }
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5px;
+    padding: 0 10px;
     width: auto;
     height: 30px;
     font-weight: 700;
     color: cadetblue;
     background-color: white;
     border: 1px solid cadetblue;
+    border-radius: 10px;
     cursor: pointer;
   }
   &__item {

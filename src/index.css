@@ -8,6 +8,8 @@
 	outline: none;
 	font-family: "Inter", sans-serif;
 	box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: cadetblue white;
 }
 
 body {

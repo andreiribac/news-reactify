@@ -1,19 +1,15 @@
-/* eslint-disable react/prop-types */
-import s from "./styles.module.scss";
+import { forwardRef } from "react";
+import styles from "./styles.module.scss";
 
-const SelectCatagory = ({
-  categories,
-  selectedCategory,
-  setSelectedCategory,
-}) => {
-  return (
-    <div className={s.categories}>
-      <div className={s.categories__wrapper}>
-        <div className={s.categories__row}>
+const SelectCatagory = forwardRef(
+  ({ categories, selectedCategory, setSelectedCategory }, ref) => {
+    return (
+      <div ref={ref} className={styles.categories}>
+        <div className={styles.categories__row}>
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`${s.categories__item} ${
-              !selectedCategory && s.active
+            className={`${styles.categories__item} ${
+              !selectedCategory && styles.active
             }`}
           >
             All
@@ -23,8 +19,8 @@ const SelectCatagory = ({
               <button
                 key={catagory}
                 onClick={() => setSelectedCategory(catagory)}
-                className={`${s.categories__item} ${
-                  selectedCategory === catagory && s.active
+                className={`${styles.categories__item} ${
+                  selectedCategory === catagory && styles.active
                 }`}
               >
                 {catagory}
@@ -33,8 +29,10 @@ const SelectCatagory = ({
           })}
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
+
+SelectCatagory.displayName = "SelectCatagory";
 
 export default SelectCatagory;

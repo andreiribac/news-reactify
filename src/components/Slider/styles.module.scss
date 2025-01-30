@@ -1,0 +1,21 @@
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-weight: 700;
+    color: cadetblue;
+    background-color: white;
+    border: 1px solid cadetblue;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
